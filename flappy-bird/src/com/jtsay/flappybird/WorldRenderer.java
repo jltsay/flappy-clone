@@ -48,7 +48,10 @@ public class WorldRenderer {
 	}
 	
 	private void renderPipes() {
-		
+		for (PipeSet pipeSet : world.pipeSets) {
+			batch.draw(Assets.pipe, pipeSet.topPipe.position.x, pipeSet.topPipe.position.y);
+			batch.draw(Assets.pipe, pipeSet.bottomPipe.position.x, pipeSet.bottomPipe.position.y);
+		}
 	}
 	
 	
