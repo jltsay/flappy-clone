@@ -1,9 +1,13 @@
 package com.jtsay.flappybird;
 
+import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.graphics.OrthographicCamera;
 
 public class GameScreen implements Screen {
 
+	Game game;
+	
 	@Override
 	public void render(float delta) {
 		// TODO Auto-generated method stub

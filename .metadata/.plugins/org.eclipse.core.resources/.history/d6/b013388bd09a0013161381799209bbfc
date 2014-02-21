@@ -1,0 +1,11 @@
+package com.jtsay.flappybird;
+
+public class Pipe extends GameObject {
+
+	public Pipe(float x, float y) {
+		super(x, y, 64, 320);
+		// TODO Auto-generated constructor stub
+	}
+
+	
+}

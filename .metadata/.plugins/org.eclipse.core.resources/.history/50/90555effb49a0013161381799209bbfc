@@ -1,0 +1,24 @@
+package com.jtsay.flappybird;
+
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
+
+public class Assets {
+
+	public static Texture background;
+	public static TextureRegion backgroundRegion;
+	private static Texture items;
+	
+	public static void load() {
+		background = loadTexture("data/background.png");
+		backgroundRegion = new TextureRegion(background, 320, 480);
+	}
+	
+	public static Texture loadTexture (String file) {
+		return new Texture(Gdx.files.internal(file));
+	}
+	
+	
+}

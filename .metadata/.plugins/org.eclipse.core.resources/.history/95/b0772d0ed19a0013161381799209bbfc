@@ -1,0 +1,5 @@
+package com.jtsay.flappybird;
+
+public class SpaceBetweenPipes extends GameObject {
+
+}

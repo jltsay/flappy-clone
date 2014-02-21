@@ -7,4 +7,8 @@
 <fullyQualifiedTypeName name="com.badlogic.gdx.graphics.g2d.TextureAtlas.AtlasRegion"/>
 <fullyQualifiedTypeName name="com.badlogic.gdx.utils.Timer"/>
 <fullyQualifiedTypeName name="com.badlogic.gdx.utils.Timer.Task"/>
+<fullyQualifiedTypeName name="com.badlogic.gdx.math.Rectangle"/>
+<fullyQualifiedTypeName name="com.badlogic.gdx.math.Vector2"/>
+<fullyQualifiedTypeName name="com.jtsay.flappybird.GameObject"/>
+<fullyQualifiedTypeName name="com.badlogic.gdx.Game"/>
 </qualifiedTypeNameHistroy>
