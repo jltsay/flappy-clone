@@ -17,8 +17,9 @@ public class FlappyBird extends Game {
 	private Sprite sprite;
 	
 	@Override
-	public void create() {		
-		setScreen(new GameScreen());
+	public void create() {	
+		Assets.load();
+		setScreen(new GameScreen(this));
 	}
 
 	@Override

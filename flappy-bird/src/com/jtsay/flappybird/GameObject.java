@@ -17,4 +17,22 @@ public class GameObject {
 		acceleration = new Vector2();
 	}
 	
+	public void setPos(float x, float y) {
+		this.position.x = x;
+		this.position.y = y;
+		this.bounds.x = x - this.bounds.width/2;
+		this.bounds.y = y - this.bounds.height/2;
+	}
+	
+	public void move(float x, float y) {
+		this.position.x += x;
+		this.position.y += y;
+		this.bounds.x += x;
+		this.bounds.y += y;
+	}
+	
+	public void moveLeft(float offset) {
+		this.position.x -= offset;
+		this.bounds.x -= offset;
+	}
 }

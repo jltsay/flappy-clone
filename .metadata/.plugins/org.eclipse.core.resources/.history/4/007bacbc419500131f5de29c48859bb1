@@ -1,7 +1,0 @@
-package com.jtsay.flappybird;
-
-import com.badlogic.gdx.Screen;
-
-public class GameScreen extends Screen {
-
-}
