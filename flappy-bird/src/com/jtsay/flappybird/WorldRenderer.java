@@ -18,18 +18,19 @@ public class WorldRenderer {
 		this.world = world;
 		this.cam = new OrthographicCamera(CAM_WIDTH, CAM_HEIGHT);
 		this.cam.position.set(CAM_WIDTH/2, CAM_HEIGHT/2, 0);
+		this.cam.update();
 	}
 	
 	public void render() {
 		batch.setProjectionMatrix(cam.combined);
 		renderBackground();
-		renderBird();
+		renderObjects();
 	}
 	
 	private void renderBackground() {
 		batch.disableBlending();
 		batch.begin();
-		batch.draw(Assets.backgroundRegion, cam.position.x - CAM_WIDTH / 2, cam.position.y - CAM_HEIGHT / 2, CAM_WIDTH,
+		batch.draw(Assets.backgroundRegion, cam.position.x - CAM_WIDTH/2, cam.position.y - CAM_HEIGHT/2, CAM_WIDTH,
 				CAM_HEIGHT);
 		batch.end();
 	}
@@ -43,14 +44,14 @@ public class WorldRenderer {
 	}
 	
 	private void renderBird() {
-		batch.draw(Assets.bird, world.bird.position.x, world.bird.position.y, 32, 21);
+		batch.draw(Assets.bird, world.bird.position.x - Bird.WIDTH/2, world.bird.position.y - Bird.HEIGHT/2, 32, 21);
 		
 	}
 	
 	private void renderPipes() {
 		for (PipeSet pipeSet : world.pipeSets) {
-			batch.draw(Assets.pipe, pipeSet.topPipe.position.x, pipeSet.topPipe.position.y);
-			batch.draw(Assets.pipe, pipeSet.bottomPipe.position.x, pipeSet.bottomPipe.position.y);
+			batch.draw(Assets.pipe, pipeSet.topPipe.position.x - Pipe.WIDTH/2, pipeSet.topPipe.position.y-Pipe.HEIGHT/2);
+			batch.draw(Assets.pipe, pipeSet.bottomPipe.position.x - Pipe.WIDTH/2, pipeSet.bottomPipe.position.y - Pipe.HEIGHT/2);
 		}
 	}
 	
