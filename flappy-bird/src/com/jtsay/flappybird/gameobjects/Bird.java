@@ -1,4 +1,4 @@
-package com.jtsay.flappybird;
+package com.jtsay.flappybird.gameobjects;
 
 import com.badlogic.gdx.math.Vector2;
 
@@ -15,7 +15,7 @@ public class Bird extends GameObject {
 	}
 	
 	public void reset(float x, float y) {
-		setPos(x, y);
+		super.reset(x, y);
 		velocity.y = JUMP_VELOCITY;
 		this.isHit = false;
 	}

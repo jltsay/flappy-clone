@@ -1,8 +1,13 @@
-package com.jtsay.flappybird;
+package com.jtsay.flappybird.util;
 
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.jtsay.flappybird.World;
+import com.jtsay.flappybird.gameobjects.Bird;
+import com.jtsay.flappybird.gameobjects.Pipe;
+import com.jtsay.flappybird.gameobjects.PipeSet;
+import com.jtsay.flappybird.gameobjects.Ground;
 
 public class WorldRenderer {
 
@@ -40,18 +45,25 @@ public class WorldRenderer {
 		batch.begin();
 		renderBird();
 		renderPipes();
+		renderTopSoil();
 		batch.end();
 	}
 	
 	private void renderBird() {
-		batch.draw(Assets.bird, world.bird.position.x - Bird.WIDTH/2, world.bird.position.y - Bird.HEIGHT/2, 32, 21);
+		batch.draw(Assets.bird, world.bird.position.x - Bird.WIDTH/2, world.bird.position.y - Bird.HEIGHT/2, Bird.WIDTH, Bird.HEIGHT);
 		
 	}
 	
 	private void renderPipes() {
 		for (PipeSet pipeSet : world.pipeSets) {
-			batch.draw(Assets.pipe, pipeSet.topPipe.position.x - Pipe.WIDTH/2, pipeSet.topPipe.position.y-Pipe.HEIGHT/2);
-			batch.draw(Assets.pipe, pipeSet.bottomPipe.position.x - Pipe.WIDTH/2, pipeSet.bottomPipe.position.y - Pipe.HEIGHT/2);
+			batch.draw(Assets.pipe, pipeSet.getX() - Pipe.WIDTH/2, pipeSet.topPipe.position.y-Pipe.HEIGHT/2);
+			batch.draw(Assets.pipe, pipeSet.getX() - Pipe.WIDTH/2, pipeSet.bottomPipe.position.y - Pipe.HEIGHT/2);
+		}
+	}
+	
+	private void renderTopSoil() {
+		for (Ground ground : world.grounds) {
+			batch.draw(Assets.ground, ground.position.x - Ground.WIDTH/2, ground.position.y-Ground.HEIGHT/2);
 		}
 	}
 	

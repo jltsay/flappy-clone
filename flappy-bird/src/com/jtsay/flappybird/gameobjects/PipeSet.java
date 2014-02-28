@@ -1,4 +1,4 @@
-package com.jtsay.flappybird;
+package com.jtsay.flappybird.gameobjects;
 
 public class PipeSet {
 	public final Pipe topPipe;
@@ -12,10 +12,9 @@ public class PipeSet {
 	}
 	
 	public void reset(float x, float y) {
-		this.topPipe.setPos(x, y + SpaceBetweenPipes.HEIGHT/2 + Pipe.HEIGHT/2);
-		// TODO: move y + SpaceBetweenPipes.HEIGHT/2 + Pipe.HEIGHT/2 to some helper
-		this.space.setPos(x, y);
-		this.bottomPipe.setPos(x, y - SpaceBetweenPipes.HEIGHT/2 - Pipe.HEIGHT/2);
+		this.topPipe.reset(x, y + SpaceBetweenPipes.HEIGHT/2 + Pipe.HEIGHT/2);
+		this.space.reset(x, y);
+		this.bottomPipe.reset(x, y - SpaceBetweenPipes.HEIGHT/2 - Pipe.HEIGHT/2);
 		
 	}
 	

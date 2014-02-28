@@ -1,11 +1,15 @@
-package com.jtsay.flappybird;
+package com.jtsay.flappybird.screens;
 
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.jtsay.flappybird.World;
+import com.jtsay.flappybird.WorldState;
 import com.jtsay.flappybird.World.WorldListener;
+import com.jtsay.flappybird.util.Assets;
+import com.jtsay.flappybird.util.WorldRenderer;
 
 public class GameScreen implements Screen {
 
@@ -14,6 +18,7 @@ public class GameScreen implements Screen {
 	WorldListener listener;
 	WorldRenderer renderer;
 	SpriteBatch batcher;
+	String scoreString;
 	
 	public GameScreen(Game game) {
 		this.game = game;
@@ -37,6 +42,7 @@ public class GameScreen implements Screen {
 		};
 		this.world = new World(listener);
 		this.renderer = new WorldRenderer(batcher, world);
+		scoreString = "SCORE: ";
 	}
 	
 	@Override
@@ -65,6 +71,9 @@ public class GameScreen implements Screen {
 	
 	private void draw() {
 		renderer.render();
+		batcher.begin();
+		Assets.font.draw(batcher, scoreString + world.score, 16, world.HEIGHT - 20);
+		batcher.end();
 	}
 
 	@Override

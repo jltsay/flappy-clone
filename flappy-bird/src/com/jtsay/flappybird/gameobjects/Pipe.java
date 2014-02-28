@@ -1,4 +1,4 @@
-package com.jtsay.flappybird;
+package com.jtsay.flappybird.gameobjects;
 
 public class Pipe extends GameObject {
 

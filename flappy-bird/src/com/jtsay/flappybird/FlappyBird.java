@@ -10,6 +10,8 @@ import com.badlogic.gdx.graphics.Texture.TextureFilter;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.jtsay.flappybird.screens.GameScreen;
+import com.jtsay.flappybird.util.Assets;
 
 public class FlappyBird extends Game {
 	private OrthographicCamera camera;

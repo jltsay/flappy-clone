@@ -1,4 +1,4 @@
-package com.jtsay.flappybird;
+package com.jtsay.flappybird.gameobjects;
 
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
@@ -17,7 +17,7 @@ public class GameObject {
 		acceleration = new Vector2();
 	}
 	
-	public void setPos(float x, float y) {
+	public void reset(float x, float y) {
 		this.position.x = x;
 		this.position.y = y;
 		this.bounds.x = x - this.bounds.width/2;
